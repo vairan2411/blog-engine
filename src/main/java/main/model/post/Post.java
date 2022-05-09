@@ -1,21 +1,25 @@
 package main.model.post;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import main.model.comments.Comment;
+import main.model.tags.Tag;
 import main.model.users.User;
 import main.model.votes.Vote;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "posts")
+@NoArgsConstructor
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id",nullable = false)
     private Integer id;
 
@@ -47,5 +51,15 @@ public class Post {
 
     @OneToMany(mappedBy = "post")
     private List<Vote> votes;
+
+    @OneToMany(mappedBy = "post")
+    private List<Comment> comments;
+
+    @ManyToMany
+    @JoinTable(name = "tag2post",
+            joinColumns = @JoinColumn(name = "tag_id"),
+            inverseJoinColumns = @JoinColumn(name = "post_id"))
+    private List<Tag> tags;
+
 
 }

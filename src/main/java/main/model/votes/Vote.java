@@ -1,6 +1,7 @@
 package main.model.votes;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import main.model.post.Post;
 import main.model.users.User;
@@ -12,10 +13,11 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "votes")
+@Table(name = "post_votes")
+@NoArgsConstructor
 public class Vote {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id",nullable = false)
     int id;
 
