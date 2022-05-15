@@ -1,13 +1,10 @@
-package main.model.votes;
+package main.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import main.model.post.Post;
-import main.model.users.User;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity

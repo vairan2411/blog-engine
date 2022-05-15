@@ -1,4 +1,4 @@
-package main.model.global_setting;
+package main.model;
 
 
 import lombok.AllArgsConstructor;

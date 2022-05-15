@@ -1,4 +1,4 @@
-package main.model.post;
+package main.model.enume;
 
 public enum ModerationStatus {
     NEW,

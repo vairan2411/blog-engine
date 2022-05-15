@@ -1,4 +1,4 @@
-package main.model.captcha;
+package main.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

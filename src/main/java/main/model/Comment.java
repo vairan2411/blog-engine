@@ -1,10 +1,8 @@
-package main.model.comments;
+package main.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import main.model.post.Post;
-import main.model.users.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

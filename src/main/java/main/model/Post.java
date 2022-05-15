@@ -1,12 +1,9 @@
-package main.model.post;
+package main.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import main.model.comments.Comment;
-import main.model.tags.Tag;
-import main.model.users.User;
-import main.model.votes.Vote;
+import main.model.enume.ModerationStatus;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

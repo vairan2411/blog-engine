@@ -1,9 +1,8 @@
-package main.model.tags;
+package main.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import main.model.post.Post;
 
 import javax.persistence.*;
 import java.util.List;
