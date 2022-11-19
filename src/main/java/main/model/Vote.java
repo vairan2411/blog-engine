@@ -13,23 +13,24 @@ import java.time.LocalDateTime;
 @Table(name = "post_votes")
 @NoArgsConstructor
 public class Vote {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",nullable = false)
-    int id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id",referencedColumnName = "id", nullable = false)
-    private User user;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
+  private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "post_id",referencedColumnName = "id",nullable = false)
-    private Post post;
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+  private User user;
 
-    @Column(name = "time",nullable = false)
-    LocalDateTime time;
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "post_id", referencedColumnName = "id", nullable = false)
+  private Post post;
 
-    @Column(name = "value", nullable = false, length = 1)
-    private byte value;
+  @Column(nullable = false)
+  LocalDateTime time;
+
+  @Column(nullable = false)
+  private Boolean value;
 
 }

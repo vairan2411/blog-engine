@@ -1,0 +1,13 @@
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 1, 1, '1970-05-27', 'Eaque est delectus placeat et porro enim veritatis animi.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 2, 1, '2006-01-30', 'Enim iusto earum sequi tenetur magnam est quas.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (1, 1, 2, '1998-07-26', 'Unde mollitia tempore beatae.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 2, 3, '2018-05-04', 'Nostrum sit labore incidunt libero omnis ipsam.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (2, 3, 4, '1981-02-26', 'Earum quod quia omnis esse est qui.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 3, 5, '1982-01-18', 'Quo qui est maiores alias et voluptas.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 4, 6, '2004-01-28', 'Officia sit consequuntur consectetur qui cumque.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 5, 5, '2012-03-25', 'Incidunt saepe expedita est repudiandae laudantium.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (5, 3, 7, '1970-09-24', 'Odit porro sint quisquam.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 7, 8, '1979-05-31', 'Eligendi deleniti deleniti iure labore nisi ut molestiae et.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 8, 9, '1980-10-01', 'Eum voluptas sit iure tempora mollitia quos.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (7, 4, 2, '1982-05-01', 'Error voluptatem sit facilis excepturi aliquid.');
+INSERT INTO post_comments (parent_id, post_id, user_id, time, text) VALUES  (null, 5, 3, '1973-07-10', 'Est quae asperiores consequatur provident rerum sit accusamus.');

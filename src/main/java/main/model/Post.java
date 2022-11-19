@@ -1,5 +1,6 @@
 package main.model;
 
+import java.util.Set;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,48 +16,46 @@ import java.util.List;
 @Table(name = "posts")
 @NoArgsConstructor
 public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",nullable = false)
-    private Integer id;
 
-    @Column(name = "is_active", nullable = false)
-    private Boolean isActive;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(nullable = false)
+  private Long id;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "moderation_status")
-    private ModerationStatus moderationStatus=ModerationStatus.NEW;
+  @Column(nullable = false)
+  private Boolean isActive;
 
-    @Column (name = "moderator_id")
-    private int moderatorId;
+  @Enumerated(EnumType.STRING)
+  @Column(columnDefinition = "enum('NEW', 'ACCEPTED', 'DECLINED') default 'NEW'", nullable = false)
+  private ModerationStatus moderationStatus;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
-    private User user;
+  private Long moderatorId;
 
-    @Column(name = "time", nullable = false)
-    private LocalDateTime time;
+  @ManyToOne
+  @JoinColumn(nullable = false)
+  private User user;
 
-    @Column(name = "title", nullable = false)
-    private String title;
+  @Column(nullable = false)
+  private LocalDateTime time;
 
-    @Column (name = "text", columnDefinition = "TEXT", nullable = false)
-    private String text;
+  @Column(nullable = false)
+  private String title;
 
-    @Column(name = "view_count",nullable = false)
-    private int viewCount;
+  @Column(columnDefinition = "TEXT", nullable = false)
+  private String text;
 
-    @OneToMany(mappedBy = "post")
-    private List<Vote> votes;
+  @Column(nullable = false)
+  private int viewCount;
 
-    @OneToMany(mappedBy = "post")
-    private List<Comment> comments;
+  @OneToMany(mappedBy = "post")
+  private List<Vote> votes;
 
-    @ManyToMany
-    @JoinTable(name = "tag2post",
-            joinColumns = @JoinColumn(name = "tag_id"),
-            inverseJoinColumns = @JoinColumn(name = "post_id"))
-    private List<Tag> tags;
+  @OneToMany(mappedBy = "post")
+  private List<Comment> comments;
+
+  @ManyToMany
+  @JoinTable(name = "tag2post", joinColumns = @JoinColumn(name = "tag_id"), inverseJoinColumns = @JoinColumn(name = "post_id"))
+  private Set<Tag> tags;
 
 
 }

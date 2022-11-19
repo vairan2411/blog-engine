@@ -15,18 +15,19 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GlobalSetting {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
-    private int id;
 
-    @Column(nullable = false)
-    private String code;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(nullable = false)
+  private Long id;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String code;
 
-    @Column(nullable = false)
-    private String value;
+  @Column(nullable = false)
+  private String name;
+
+  @Column(nullable = false)
+  private String value;
 
 }

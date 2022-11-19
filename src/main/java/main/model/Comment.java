@@ -13,27 +13,27 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class Comment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private int id;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "parent_id",referencedColumnName = "id")
-    private Comment parentComment;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(nullable = false)
+  private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "post_id",referencedColumnName = "id", nullable = false)
-    private Post post;
+  @Column(name = "parent_id")
+  private Long parentComment;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id",referencedColumnName = "id",nullable = false)
-    private User user;
+  @ManyToOne(cascade = CascadeType.ALL, optional = false)
+  @JoinColumn(name = "post_id", referencedColumnName = "id", nullable = false)
+  private Post post;
 
-    @Column(name = "time",nullable = false)
-    private LocalDateTime time;
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+  private User user;
 
-    @Column(name = "text", columnDefinition = "TEXT", nullable = false)
-    private String text;
+  @Column(nullable = false)
+  private LocalDateTime time;
+
+  @Column(columnDefinition = "TEXT", nullable = false)
+  private String text;
 
 }

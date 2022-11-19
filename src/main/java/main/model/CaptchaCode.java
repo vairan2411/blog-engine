@@ -13,18 +13,19 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class CaptchaCode {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private int id;
 
-    @Column(nullable = false)
-    private LocalDateTime time;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(nullable = false)
+  private Long id;
 
-    @Column(name = "code", nullable = false)
-    private String code;
+  @Column(nullable = false)
+  private LocalDateTime time;
 
-    @Column(name = "secret_code", nullable = false)
-    private String secretCode;
+  @Column(nullable = false)
+  private String code;
+
+  @Column(nullable = false)
+  private String secretCode;
 
 }

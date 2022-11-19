@@ -1,11 +1,18 @@
 package main.model;
 
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
@@ -13,18 +20,17 @@ import java.util.List;
 @Table(name = "tags")
 @NoArgsConstructor
 public class Tag {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private int id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
+  private Long id;
 
-    @ManyToMany
-    @JoinTable(name = "tag2post",
-            joinColumns = @JoinColumn(name = "posts_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    private List<Post> posts;
+  @Column(name = "name", nullable = false)
+  private String name;
+
+  @ManyToMany
+  @JoinTable(name = "tag2post", joinColumns = @JoinColumn(name = "post_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
+  private Set<Post> posts;
 
 }
